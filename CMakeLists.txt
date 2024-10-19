@@ -5,18 +5,22 @@ include(cmake/prelude.cmake)
 project(
     jit_blocks
     VERSION 0.1.0
-    DESCRIPTION "Short description"
-    HOMEPAGE_URL "https://example.com/"
+    DESCRIPTION "Common JIT-powered building blocks for C using libgccjit"
+    HOMEPAGE_URL "https://github.com/htfy96/jit_blocks"
     LANGUAGES C
 )
 
 include(cmake/variables.cmake)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+
+find_package(libgccjit REQUIRED)
 
 # ---- Declare library ----
 
 add_library(
     jit_blocks_jit_blocks
-    source/jit_blocks.c
+    source/common.c
+    source/divide.c
 )
 add_library(jit_blocks::jit_blocks ALIAS jit_blocks_jit_blocks)
 
@@ -53,6 +57,8 @@ target_include_directories(
 )
 
 target_compile_features(jit_blocks_jit_blocks PUBLIC c_std_99)
+
+target_link_libraries(jit_blocks_jit_blocks PUBLIC libgccjit::libgccjit)
 
 # ---- Install rules ----
 

@@ -11,13 +11,16 @@ if(PROJECT_IS_TOP_LEVEL)
   enable_testing()
 endif()
 
+function(add_jit_blocks_test test_name)
+  add_executable(${test_name} source/${test_name}.c)
+  target_link_libraries(${test_name} PRIVATE jit_blocks::jit_blocks)
+  target_compile_features(${test_name} PRIVATE c_std_99)
+  add_test(NAME ${test_name} COMMAND ${test_name})
+endfunction()
+
 # ---- Tests ----
 
-add_executable(jit_blocks_test source/jit_blocks_test.c)
-target_link_libraries(jit_blocks_test PRIVATE jit_blocks::jit_blocks)
-target_compile_features(jit_blocks_test PRIVATE c_std_99)
-
-add_test(NAME jit_blocks_test COMMAND jit_blocks_test)
+add_jit_blocks_test("jit_blocks_divide_test")
 
 # ---- End-of-file commands ----
 
