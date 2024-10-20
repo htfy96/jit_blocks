@@ -76,7 +76,6 @@ jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
                 custom_context, func_ptr_type, (void*)*record),
             1,
             call_args));
-    break;
   }
 
   gcc_jit_block_end_with_void_return(block, NULL);
