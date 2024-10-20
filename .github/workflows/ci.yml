@@ -130,7 +130,7 @@ jobs:
           -D BUILD_SHARED_LIBS=${{ matrix.shared }}
 
       - name: Build
-        run: cmake --build build --config Release -j 2
+        run: cmake --build build --config Release -j 2 -v
 
       - name: Install
         run: cmake --install build --config Release --prefix prefix
