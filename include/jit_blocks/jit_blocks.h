@@ -85,16 +85,16 @@ typedef void (*jit_blocks_funccalls_func_ptr_t)(void*);
 
 typedef void (*jit_blocks_funccalls_output_func_t)(void* arg);
 
-jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(
-    jit_blocks_funccalls_func_ptr_t* records,
-    int num_records,
-    gcc_jit_result** out_res);
+JIT_BLOCKS_EXPORT jit_blocks_funccalls_output_func_t
+jit_blocks_funccalls_build(jit_blocks_funccalls_func_ptr_t* records,
+                           int num_records,
+                           gcc_jit_result** out_res);
 
-jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
-    jit_blocks_funccalls_func_ptr_t* records,
-    int num_records,
-    gcc_jit_context* custom_context,
-    gcc_jit_result** out_res);
+JIT_BLOCKS_EXPORT jit_blocks_funccalls_output_func_t
+jit_blocks_funccalls_build_aux(jit_blocks_funccalls_func_ptr_t* records,
+                               int num_records,
+                               gcc_jit_context* custom_context,
+                               gcc_jit_result** out_res);
 
 /** @} */
 
