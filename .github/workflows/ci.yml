@@ -122,7 +122,7 @@ jobs:
       - name: Install static analyzers
         if: matrix.os == 'ubuntu-22.04'
         run: sudo apt-get install clang-tidy-14 cppcheck libgccjit-11-dev -y -q
-          && sudo update-alternatives --verbose --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-14 140
+          && sudo update-alternatives --debug --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-14 140
 
       - name: Configure
         shell: pwsh
