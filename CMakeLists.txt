@@ -21,6 +21,7 @@ add_library(
     jit_blocks_jit_blocks
     source/common.c
     source/divide.c
+    source/funccalls.c
 )
 add_library(jit_blocks::jit_blocks ALIAS jit_blocks_jit_blocks)
 

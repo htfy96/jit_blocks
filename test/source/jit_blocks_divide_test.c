@@ -22,4 +22,5 @@ int main(int argc, char const* argv[])
   assert(devide_by_9285918375(10000000000) == 1);
   assert(devide_by_9285918375(2132343254325) == 229);
   (void)devide_by_9285918375;
+  return 0;
 }

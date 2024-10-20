@@ -21,6 +21,7 @@ endfunction()
 # ---- Tests ----
 
 add_jit_blocks_test("jit_blocks_divide_test")
+add_jit_blocks_test("jit_blocks_funccalls_test")
 
 # ---- End-of-file commands ----
 
