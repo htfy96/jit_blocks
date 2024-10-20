@@ -98,6 +98,7 @@ jobs:
             halt_on_error=1"
           UBSAN_OPTIONS: "print_stacktrace=1:\
             halt_on_error=1"
+          LSAN_OPTIONS: "suppressions=.lsan-suppress"
         run: ctest --output-on-failure --no-tests=error -j 2
 
   test:

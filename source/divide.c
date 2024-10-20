@@ -21,7 +21,7 @@ jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int(
   return result;
 }
 
-static const int MAX_FUNC_NAME_BUFFER_SIZE = 40;
+#define MAX_FUNC_NAME_BUFFER_SIZE 40
 
 jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int_aux(
     int divisor, gcc_jit_context* custom_context, gcc_jit_result** out_res)
@@ -30,11 +30,10 @@ jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int_aux(
       gcc_jit_context_get_type(custom_context, GCC_JIT_TYPE_INT);
   gcc_jit_param* param_i =
       gcc_jit_context_new_param(custom_context, NULL, int_type, "dividend");
-  char func_name_buffer[MAX_FUNC_NAME_BUFFER_SIZE];
-  assert(
-      snprintf(
-          func_name_buffer, sizeof(func_name_buffer), "divide_by_%d", divisor)
-      < (int)sizeof(func_name_buffer));
+  char func_name_buffer[MAX_FUNC_NAME_BUFFER_SIZE] = {};
+  int ret = snprintf(
+      func_name_buffer, sizeof(func_name_buffer), "divide_by_%d", divisor);
+  assert(ret < (int)sizeof(func_name_buffer));
   gcc_jit_function* func =
       gcc_jit_context_new_function(custom_context,
                                    NULL,
@@ -76,11 +75,10 @@ jit_blocks_divide_by_k_long_t jit_blocks_build_divide_by_k_long_aux(
       gcc_jit_context_get_type(custom_context, GCC_JIT_TYPE_LONG);
   gcc_jit_param* param_i =
       gcc_jit_context_new_param(custom_context, NULL, long_type, "dividend");
-  char func_name_buffer[MAX_FUNC_NAME_BUFFER_SIZE];
-  assert(
-      snprintf(
-          func_name_buffer, sizeof(func_name_buffer), "divide_by_%ld", divisor)
-      < (int)sizeof(func_name_buffer));
+  char func_name_buffer[MAX_FUNC_NAME_BUFFER_SIZE] = {};
+  int ret = snprintf(
+      func_name_buffer, sizeof(func_name_buffer), "divide_by_%ld", divisor);
+  assert(ret < (int)sizeof(func_name_buffer));
   gcc_jit_function* func =
       gcc_jit_context_new_function(custom_context,
                                    NULL,

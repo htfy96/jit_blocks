@@ -17,7 +17,7 @@ int main(int argc, char const* argv[])
   assert(divide_by_42(100) == 2);
   assert(divide_by_42(42) == 1);
   assert(divide_by_42(0) == 0);
-  assert(divide_by_42(4493) == 49);
+  assert(divide_by_42(4493) == 106);
   (void)divide_by_42;
   gcc_jit_result_release(result);
 
