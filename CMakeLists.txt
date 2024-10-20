@@ -23,6 +23,7 @@ add_library(
     source/divide.c
     source/funccalls.c
 )
+target_link_libraries(jit_blocks_jit_blocks PUBLIC libgccjit::libgccjit)
 add_library(jit_blocks::jit_blocks ALIAS jit_blocks_jit_blocks)
 
 include(GenerateExportHeader)
@@ -59,7 +60,6 @@ target_include_directories(
 
 target_compile_features(jit_blocks_jit_blocks PUBLIC c_std_99)
 
-target_link_libraries(jit_blocks_jit_blocks PUBLIC libgccjit::libgccjit)
 
 # ---- Install rules ----
 
