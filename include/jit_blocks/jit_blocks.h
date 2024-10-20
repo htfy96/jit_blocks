@@ -38,21 +38,23 @@ typedef int (*jit_blocks_divide_by_k_int_t)(int dividend);
 typedef long (*jit_blocks_divide_by_k_long_t)(long dividend);
 
 JIT_BLOCKS_EXPORT jit_blocks_divide_by_k_int_t
-jit_blocks_build_divide_by_k_int(int divisor);
+jit_blocks_build_divide_by_k_int(int divisor, gcc_jit_result** out_res);
 
 JIT_BLOCKS_EXPORT jit_blocks_divide_by_k_int_t
 jit_blocks_build_divide_by_k_int_aux(int divisor,
-                                     gcc_jit_context* custom_context);
+                                     gcc_jit_context* custom_context,
+                                     gcc_jit_result** out_res);
 
 JIT_BLOCKS_EXPORT jit_blocks_divide_by_k_long_t
-jit_blocks_build_divide_by_k_long(long divisor);
+jit_blocks_build_divide_by_k_long(long divisor, gcc_jit_result** out_res);
 
 JIT_BLOCKS_EXPORT jit_blocks_divide_by_k_long_t
 jit_blocks_build_divide_by_k_long_aux(long divisor,
-                                      gcc_jit_context* custom_context);
+                                      gcc_jit_context* custom_context,
+                                      gcc_jit_result** out_res);
 /** @} */
 
-/** @defgroup funccalls Build a series of external/internal function calls
+/** @defgroup funccalls Build a series of function calls
 
     APIs for building a simple function that calls call specified functions
     in order.
@@ -84,12 +86,15 @@ typedef void (*jit_blocks_funccalls_func_ptr_t)(void*);
 typedef void (*jit_blocks_funccalls_output_func_t)(void* arg);
 
 jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(
-    jit_blocks_funccalls_func_ptr_t* records, int num_records);
+    jit_blocks_funccalls_func_ptr_t* records,
+    int num_records,
+    gcc_jit_result** out_res);
 
 jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
     jit_blocks_funccalls_func_ptr_t* records,
     int num_records,
-    gcc_jit_context* custom_context);
+    gcc_jit_context* custom_context,
+    gcc_jit_result** out_res);
 
 /** @} */
 

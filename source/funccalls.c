@@ -11,11 +11,13 @@
 #include "jit_blocks/jit_blocks.h"
 
 jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(
-    jit_blocks_funccalls_func_ptr_t* records, int num_records)
+    jit_blocks_funccalls_func_ptr_t* records,
+    int num_records,
+    gcc_jit_result** out_res)
 {
   gcc_jit_context* context = context_builder();
   jit_blocks_funccalls_output_func_t result =
-      jit_blocks_funccalls_build_aux(records, num_records, context);
+      jit_blocks_funccalls_build_aux(records, num_records, context, out_res);
   gcc_jit_context_release(context);
   return result;
 }
@@ -23,8 +25,12 @@ jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(
 jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
     jit_blocks_funccalls_func_ptr_t* records,
     int num_records,
-    gcc_jit_context* custom_context)
+    gcc_jit_context* custom_context,
+    gcc_jit_result** out_res)
 {
+  if (out_res == NULL) {
+    return NULL;
+  }
   static const char* FUNC_NAME = "funccall";
   gcc_jit_type* void_ptr_type =
       gcc_jit_context_get_type(custom_context, GCC_JIT_TYPE_VOID_PTR);
@@ -74,10 +80,10 @@ jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
   }
 
   gcc_jit_block_end_with_void_return(block, NULL);
-  gcc_jit_result* result = gcc_jit_context_compile(custom_context);
-  if (!result) {
+  *out_res = gcc_jit_context_compile(custom_context);
+  if (!*out_res) {
     return NULL;
   }
-  return (jit_blocks_funccalls_output_func_t)gcc_jit_result_get_code(result,
+  return (jit_blocks_funccalls_output_func_t)gcc_jit_result_get_code(*out_res,
                                                                      FUNC_NAME);
 }

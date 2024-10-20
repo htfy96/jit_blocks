@@ -11,11 +11,12 @@
 #include "common.h"
 #include "jit_blocks/jit_blocks.h"
 
-jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int(int divisor)
+jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int(
+    int divisor, gcc_jit_result** out_res)
 {
   gcc_jit_context* ctx = context_builder();
   jit_blocks_divide_by_k_int_t result =
-      jit_blocks_build_divide_by_k_int_aux(divisor, ctx);
+      jit_blocks_build_divide_by_k_int_aux(divisor, ctx, out_res);
   gcc_jit_context_release(ctx);
   return result;
 }
@@ -23,7 +24,7 @@ jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int(int divisor)
 static const int MAX_FUNC_NAME_BUFFER_SIZE = 40;
 
 jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int_aux(
-    int divisor, gcc_jit_context* custom_context)
+    int divisor, gcc_jit_context* custom_context, gcc_jit_result** out_res)
 {
   gcc_jit_type* int_type =
       gcc_jit_context_get_type(custom_context, GCC_JIT_TYPE_INT);
@@ -53,22 +54,23 @@ jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int_aux(
       gcc_jit_param_as_rvalue(param_i),
       gcc_jit_context_new_rvalue_from_int(custom_context, int_type, divisor));
   gcc_jit_block_end_with_return(block, NULL, expr);
-  gcc_jit_result* result = gcc_jit_context_compile(custom_context);
+  *out_res = gcc_jit_context_compile(custom_context);
   return (jit_blocks_divide_by_k_int_t)gcc_jit_result_get_code(
-      result, func_name_buffer);
+      *out_res, func_name_buffer);
 }
 
-jit_blocks_divide_by_k_long_t jit_blocks_build_divide_by_k_long(long divisor)
+jit_blocks_divide_by_k_long_t jit_blocks_build_divide_by_k_long(
+    long divisor, gcc_jit_result** out_res)
 {
   gcc_jit_context* ctx = context_builder();
   jit_blocks_divide_by_k_long_t result =
-      jit_blocks_build_divide_by_k_long_aux(divisor, ctx);
+      jit_blocks_build_divide_by_k_long_aux(divisor, ctx, out_res);
   gcc_jit_context_release(ctx);
   return result;
 }
 
 jit_blocks_divide_by_k_long_t jit_blocks_build_divide_by_k_long_aux(
-    long divisor, gcc_jit_context* custom_context)
+    long divisor, gcc_jit_context* custom_context, gcc_jit_result** out_res)
 {
   gcc_jit_type* long_type =
       gcc_jit_context_get_type(custom_context, GCC_JIT_TYPE_LONG);
@@ -98,7 +100,7 @@ jit_blocks_divide_by_k_long_t jit_blocks_build_divide_by_k_long_aux(
       gcc_jit_param_as_rvalue(param_i),
       gcc_jit_context_new_rvalue_from_long(custom_context, long_type, divisor));
   gcc_jit_block_end_with_return(block, NULL, expr);
-  gcc_jit_result* result = gcc_jit_context_compile(custom_context);
+  *out_res = gcc_jit_context_compile(custom_context);
   return (jit_blocks_divide_by_k_long_t)gcc_jit_result_get_code(
-      result, func_name_buffer);
+      *out_res, func_name_buffer);
 }
