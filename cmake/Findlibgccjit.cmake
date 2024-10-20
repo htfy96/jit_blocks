@@ -25,9 +25,16 @@ find_package_handle_standard_args(libgccjit
 )
 
 if(libgccjit_FOUND AND NOT TARGET libgccjit::libgccjit)
-  add_library(libgccjit::libgccjit UNKNOWN IMPORTED)
+
+  add_library(libgccjit::libgccjit SHARED IMPORTED)
   set_target_properties(libgccjit::libgccjit PROPERTIES
     IMPORTED_LOCATION "${libgccjit_LIBRARY}"
     INTERFACE_INCLUDE_DIRECTORIES "${libgccjit_INCLUDE_DIR}"
+    IMPORTED_INCLUDE_DIRECTORIES "${libgccjit_INCLUDE_DIR}"
   )
 endif()
+
+mark_as_advanced(
+  libgccjit_INCLUDE_DIR
+  libgccjit_LIBRARY
+)
