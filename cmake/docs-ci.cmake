@@ -104,7 +104,7 @@ set(config "${bin}/docs/Doxyfile")
 file(REMOVE_RECURSE "${out}/html" "${out}/xml")
 
 execute_process(
-    COMMAND "${Python3_EXECUTABLE}" "doxygen" "${config}"
+    COMMAND "doxygen" "${config}"
     WORKING_DIRECTORY "${bin}/docs"
     RESULT_VARIABLE result
 )
