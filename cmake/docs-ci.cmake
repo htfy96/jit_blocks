@@ -94,6 +94,8 @@ set(out "${DOXYGEN_OUTPUT_DIRECTORY}")
 
 set(SOURCE_DOC_CONFIG_DIR "${PROJECT_SOURCE_DIR}/docs")
 
+set(AWESOME_CSS_DIR ${doxygen_awesome_SOURCE_DIR})
+
 foreach(file IN ITEMS Doxyfile conf.py)
   configure_file("${src}/docs/${file}.in" "${bin}/docs/${file}" @ONLY)
 endforeach()
