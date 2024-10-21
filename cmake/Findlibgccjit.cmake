@@ -29,9 +29,9 @@ if(libgccjit_FOUND AND NOT TARGET libgccjit::libgccjit)
   add_library(libgccjit::libgccjit SHARED IMPORTED)
   set_target_properties(libgccjit::libgccjit PROPERTIES
     IMPORTED_LOCATION "${libgccjit_LIBRARY}"
-    INTERFACE_INCLUDE_DIRECTORIES "${libgccjit_INCLUDE_DIR}"
-    IMPORTED_INCLUDE_DIRECTORIES "${libgccjit_INCLUDE_DIR}"
   )
+  target_include_directories(libgccjit::libgccjit INTERFACE
+    ${libgccjit_INCLUDE_DIR})
 endif()
 
 mark_as_advanced(
