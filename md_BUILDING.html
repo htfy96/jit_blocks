@@ -85,8 +85,8 @@ $(function() {
   <div class="headertitle"><div class="title">Building with CMake</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md9"></a> </p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md10"></a> </p>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Build</h1>
 <p>This project doesn't require any special command-line flags to build to keep things simple.</p>
 <p>Here are the steps for building in release mode with a single-configuration generator, like the Unix Makefiles one:</p>
@@ -95,17 +95,17 @@ Build</h1>
 </div><!-- fragment --><p>Here are the steps for building in release mode with a multi-configuration generator, like the Visual Studio ones:</p>
 <div class="fragment"><div class="line">cmake -S . -B build</div>
 <div class="line">cmake --build build --config Release</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 Building with MSVC</h2>
 <p>Note that MSVC by default is not standards compliant and you need to pass some flags to make it behave properly. See the <code>flags-msvc</code> preset in the <a href="CMakePresets.json">CMakePresets.json</a> file for the flags and with what variable to provide them to CMake during configuration.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Install</h1>
 <p>This project doesn't require any special command-line flags to install to keep things simple. As a prerequisite, the project has to be built with the above commands already.</p>
 <p>Here is the command for installing the release mode artifacts with a single-configuration generator, like the Unix Makefiles one:</p>
 <div class="fragment"><div class="line">cmake --install build</div>
 </div><!-- fragment --><p>Here is the command for installing the release mode artifacts with a multi-configuration generator, like the Visual Studio ones:</p>
 <div class="fragment"><div class="line">cmake --install build --config Release</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
 CMake package</h2>
 <p>This project exports a CMake package to be used with the <a href="https://cmake.org/cmake/help/latest/command/find_package.html"><code>find_package</code></a> command of CMake:</p>
 <ul>
@@ -120,7 +120,7 @@ CMake package</h2>
 <div class="line">    project_target PRIVATE</div>
 <div class="line">    jit_blocks::jit_blocks</div>
 <div class="line">)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
 Note to packagers</h2>
 <p>The <code>CMAKE_INSTALL_INCLUDEDIR</code> is set to a path other than just <code>include</code> if the project is configured as a top level project to avoid indirectly including other libraries when installed to a common prefix. Please review the <a href="cmake/install-rules.cmake">install-rules.cmake</a> file for the full set of install rules. </p>
 </div></div><!-- contents -->

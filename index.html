@@ -130,12 +130,19 @@ Expression Engine</h2>
 <p>Builds a stack-based arithmetic expression interpreter.</p>
 <p>See <a class="el" href="group__expr.html">Efficient floating point arithmetic expression engine</a></p>
 <h1><a class="anchor" id="autotoc_md6"></a>
+Using this library</h1>
+<p>For CMake users, the recommended way is to add this project either as a git submodule, or download via <a href="https://cmake.org/cmake/help/latest/module/FetchContent.html">FetchContent</a> or <a href="https://github.com/cpm-cmake/CPM.cmake">CPM.cmake</a>, and then add these lines to your CMakeLists.txt:</p>
+<div class="fragment"><div class="line">add_subdirectory(&quot;jit_blocks_dir&quot;)</div>
+<div class="line">target_link_libraries(YOUR_LIB PRIVATE jit_blocks::jit_blocks)</div>
+</div><!-- fragment --><p>It should automatically take care of all include directories and linking flags.</p>
+<p>Alternatively, you can also write Shell scripts following <a class="el" href="md_BUILDING.html">BUILDING</a> instructions, install them into a local directory, and then manually include the generated headers and built library.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Building and installing</h1>
 <p>See the <a class="el" href="md_BUILDING.html">BUILDING</a> document.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Contributing</h1>
 <p>See the <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING</a> document.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Licensing</h1>
 <p>Apache v2 </p>
 </div></div><!-- PageDoc -->
