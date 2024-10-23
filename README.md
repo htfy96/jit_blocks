@@ -55,6 +55,19 @@ Builds a stack-based arithmetic expression interpreter.
 
 See @ref expr
 
+# Using this library
+
+For CMake users, the recommended way is to add this project either as a git submodule, or download via [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) or [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake), and then add these lines to your CMakeLists.txt:
+
+```cmake
+add_subdirectory("jit_blocks_dir")
+target_link_libraries(YOUR_LIB PRIVATE jit_blocks::jit_blocks)
+```
+
+It should automatically take care of all include directories and linking flags.
+
+Alternatively, you can also write Shell scripts following [BUILDING](./BUILDING.md) instructions, install them into a local directory, and then manually include the generated headers and built library.
+
 # Building and installing
 
 See the [BUILDING](./BUILDING.md) document.
