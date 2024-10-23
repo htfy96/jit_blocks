@@ -15,6 +15,8 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 find_package(libgccjit REQUIRED)
 
+find_library(MATH_LIBRARY m REQUIRED)
+
 # ---- Declare library ----
 
 add_library(
@@ -22,8 +24,9 @@ add_library(
     source/common.c
     source/divide.c
     source/funccalls.c
+    source/expr.c
 )
-target_link_libraries(jit_blocks_jit_blocks PUBLIC libgccjit::libgccjit)
+target_link_libraries(jit_blocks_jit_blocks PUBLIC libgccjit::libgccjit PRIVATE ${MATH_LIBRARY})
 add_library(jit_blocks::jit_blocks ALIAS jit_blocks_jit_blocks)
 
 include(GenerateExportHeader)

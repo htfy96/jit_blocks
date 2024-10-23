@@ -10,7 +10,8 @@ Checks: "-*,\
   portability-*,\
   openmp-*,\
   readability-*,\
-  -readability-magic-numbers"
+  -readability-magic-numbers,\
+  -readability-identifier-length"
 WarningsAsErrors: ""
 CheckOptions:
   - key: "bugprone-argument-comment.StrictMode"

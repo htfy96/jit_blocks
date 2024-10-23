@@ -33,29 +33,35 @@ At a high level, there are two types of API interfaces:
   gcc_jit_context_release(ctx);
 ```
 
-## Easy context builder APIs
+## Easy context builder API
 
 See @ref context_builder
 
-## divide-by API builders
+## divide-by API builder
 
 Builds `divide_by_constant` functions. These division functions are often faster than writing `runtime_var / runtime_var` expressions, as compiler could utilize the known divisor and convert the division into multiplications. Provides similar speedup to [libdivide](https://libdivide.com/).
 
 See @ref divide.
 
-## FuncCalls builders
+## Function Calls builder
 
 Builds a function that calls all specified function pointers in order. Compared to calling function vectors at runtime, it's more branch-predictor-friendly and allows more speculative execution.
 
 See @ref funccalls
 
+## Expression Engine
+
+Builds a stack-based arithmetic expression interpreter.
+
+See @ref expr
+
 # Building and installing
 
-See the [BUILDING](BUILDING.md) document.
+See the [BUILDING](./BUILDING.md) document.
 
 # Contributing
 
-See the [CONTRIBUTING](CONTRIBUTING.md) document.
+See the [CONTRIBUTING](./CONTRIBUTING.md) document.
 
 # Licensing
 
