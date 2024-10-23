@@ -39,6 +39,7 @@ int main(void)
   out(ctx);
   JB_TEST_ASSERT(ctx->stack_size == 1);
   JB_TEST_ASSERT(fabs(ctx->stack[0] - -1620.) < 1e-5);
+  gcc_jit_result_release(result);
   printf("Pass!\n");
   return 0;
 }

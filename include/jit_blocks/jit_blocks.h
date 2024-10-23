@@ -103,12 +103,12 @@ jit_blocks_funccalls_build_aux(jit_blocks_funccalls_func_ptr_t* records,
 Creates a stack-based expression evaluation function.
 
 Users could pass an array of @ref jit_blocks_expr_func_t to
-@ref jit_blocks_expr_build to create a function that accpets a
+@ref jit_blocks_expr_build to create a function that accepts a
 @ref jit_blocks_expr_context (which is essentially a stack of doubles),
 
 Then, users could call @ref jit_blocks_expr_context_new to create a context,
 push doubles into the context via @ref jit_blocks_expr_context_push (Operands
-evaluated first should be pushed last so that they could poped out during
+evaluated first should be pushed last so that they could popped out during
 calculation first). After users build a successful @ref jit_blocks_expr_context,
 they can call the generation function and extract result from the stack via
 @ref jit_blocks_expr_context_pop.
