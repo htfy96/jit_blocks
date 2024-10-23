@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <libgccjit.h>
 #include <math.h>
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
 
@@ -40,6 +41,7 @@ int main(void)
   JB_TEST_ASSERT(ctx->stack_size == 1);
   JB_TEST_ASSERT(fabs(ctx->stack[0] - -1620.) < 1e-5);
   gcc_jit_result_release(result);
+  jit_blocks_expr_context_release(ctx);
   printf("Pass!\n");
   return 0;
 }
