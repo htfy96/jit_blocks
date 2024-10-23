@@ -115,23 +115,27 @@ API Overview</h1>
 <div class="line">gcc_jit_context_release(ctx);</div>
 <div class="ttc" id="agroup__divide_html_ga751d36c66c2341ca08047ae286b3a7ff"><div class="ttname"><a href="group__divide.html#ga751d36c66c2341ca08047ae286b3a7ff">jit_blocks_build_divide_by_k_int_aux</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT jit_blocks_divide_by_k_int_t jit_blocks_build_divide_by_k_int_aux(int divisor, gcc_jit_context *custom_context, gcc_jit_result **out_res)</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
-Easy context builder APIs</h2>
+Easy context builder API</h2>
 <p>See <a class="el" href="group__context__builder.html">Context Builder utilities for easy APIs</a></p>
 <h2><a class="anchor" id="autotoc_md3"></a>
-divide-by API builders</h2>
+divide-by API builder</h2>
 <p>Builds <code>divide_by_constant</code> functions. These division functions are often faster than writing <code>runtime_var / runtime_var</code> expressions, as compiler could utilize the known divisor and convert the division into multiplications. Provides similar speedup to <a href="https://libdivide.com/">libdivide</a>.</p>
 <p>See <a class="el" href="group__divide.html">divide-by API builders</a>.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
-FuncCalls builders</h2>
+Function Calls builder</h2>
 <p>Builds a function that calls all specified function pointers in order. Compared to calling function vectors at runtime, it's more branch-predictor-friendly and allows more speculative execution.</p>
 <p>See <a class="el" href="group__funccalls.html">Build a series of function calls</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Building and installing</h1>
-<p>See the BUILDING document.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Expression Engine</h2>
+<p>Builds a stack-based arithmetic expression interpreter.</p>
+<p>See <a class="el" href="group__expr.html">Efficient floating point arithmetic expression engine</a></p>
 <h1><a class="anchor" id="autotoc_md6"></a>
-Contributing</h1>
-<p>See the CONTRIBUTING document.</p>
+Building and installing</h1>
+<p>See the <a class="el" href="md_BUILDING.html">BUILDING</a> document.</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
+Contributing</h1>
+<p>See the <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING</a> document.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Licensing</h1>
 <p>Apache v2 </p>
 </div></div><!-- PageDoc -->

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['series_20of_20function_20calls_0',['Build a series of function calls',['../group__funccalls.html',1,'']]]
+  ['mode_0',['Developer mode',['../md_HACKING.html#autotoc_md19',1,'']]],
+  ['mode_20targets_1',['Developer mode targets',['../md_HACKING.html#autotoc_md22',1,'']]],
+  ['msvc_2',['Building with MSVC',['../md_BUILDING.html#autotoc_md11',1,'']]]
 ];

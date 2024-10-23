@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['series_20of_20function_20calls_0',['Build a series of function calls',['../group__funccalls.html',1,'']]]
+  ['point_20arithmetic_20expression_20engine_0',['Efficient floating point arithmetic expression engine',['../group__expr.html',1,'']]],
+  ['predefined_20arithmetic_20operations_1',['Predefined arithmetic operations',['../group__expr-predefined-ops.html',1,'']]]
 ];

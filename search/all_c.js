@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['utilities_20for_20easy_20apis_0',['Context Builder utilities for easy APIs',['../group__context__builder.html',1,'']]]
+  ['note_20to_20packagers_0',['Note to packagers',['../md_BUILDING.html#autotoc_md14',1,'']]]
 ];
