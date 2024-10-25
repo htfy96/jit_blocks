@@ -141,7 +141,7 @@ void jit_blocks_expr_ops_parse(const char* ops[],
   }
 }
 
-jit_blocks_expr_func_t jit_blocks_expr_build(jit_blocks_expr_func_t* ops,
+jit_blocks_expr_func_t jit_blocks_expr_build(const jit_blocks_expr_func_t* ops,
                                              int num_ops,
                                              gcc_jit_result** out_res)
 {
@@ -152,10 +152,11 @@ jit_blocks_expr_func_t jit_blocks_expr_build(jit_blocks_expr_func_t* ops,
   return result;
 }
 
-jit_blocks_expr_func_t jit_blocks_expr_build_aux(jit_blocks_expr_func_t* ops,
-                                                 int num_ops,
-                                                 gcc_jit_context* ctx,
-                                                 gcc_jit_result** out_res)
+jit_blocks_expr_func_t jit_blocks_expr_build_aux(
+    const jit_blocks_expr_func_t* ops,
+    int num_ops,
+    gcc_jit_context* ctx,
+    gcc_jit_result** out_res)
 {
   static const char* FUNC_NAME = "expr";
   gcc_jit_type* double_type =

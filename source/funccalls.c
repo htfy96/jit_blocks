@@ -10,7 +10,7 @@
 #include "jit_blocks/jit_blocks.h"
 
 jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(
-    jit_blocks_funccalls_func_ptr_t* records,
+    const jit_blocks_funccalls_func_ptr_t* records,
     int num_records,
     gcc_jit_result** out_res)
 {
@@ -22,7 +22,7 @@ jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(
 }
 
 jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
-    jit_blocks_funccalls_func_ptr_t* records,
+    const jit_blocks_funccalls_func_ptr_t* records,
     int num_records,
     gcc_jit_context* custom_context,
     gcc_jit_result** out_res)
@@ -63,7 +63,7 @@ jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build_aux(
   gcc_jit_block* block = gcc_jit_function_new_block(func, NULL);
 
   for (int i = 0; i < num_records; ++i) {
-    jit_blocks_funccalls_func_ptr_t* record = &records[i];
+    const jit_blocks_funccalls_func_ptr_t* record = &records[i];
     gcc_jit_rvalue* call_args[1] = {gcc_jit_param_as_rvalue(arg)};
     gcc_jit_block_add_eval(
         block,

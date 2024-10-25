@@ -25,6 +25,7 @@ add_library(
     source/divide.c
     source/funccalls.c
     source/expr.c
+    source/dynswitch.c
 )
 target_link_libraries(jit_blocks_jit_blocks PUBLIC libgccjit::libgccjit PRIVATE ${MATH_LIBRARY})
 add_library(jit_blocks::jit_blocks ALIAS jit_blocks_jit_blocks)

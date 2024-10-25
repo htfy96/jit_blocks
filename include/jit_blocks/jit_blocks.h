@@ -86,12 +86,12 @@ typedef void (*jit_blocks_funccalls_func_ptr_t)(void*);
 typedef void (*jit_blocks_funccalls_output_func_t)(void* arg);
 
 JIT_BLOCKS_EXPORT jit_blocks_funccalls_output_func_t
-jit_blocks_funccalls_build(jit_blocks_funccalls_func_ptr_t* records,
+jit_blocks_funccalls_build(const jit_blocks_funccalls_func_ptr_t* records,
                            int num_records,
                            gcc_jit_result** out_res);
 
 JIT_BLOCKS_EXPORT jit_blocks_funccalls_output_func_t
-jit_blocks_funccalls_build_aux(jit_blocks_funccalls_func_ptr_t* records,
+jit_blocks_funccalls_build_aux(const jit_blocks_funccalls_func_ptr_t* records,
                                int num_records,
                                gcc_jit_context* custom_context,
                                gcc_jit_result** out_res);
@@ -238,14 +238,86 @@ JIT_BLOCKS_EXPORT void jit_blocks_expr_ops_parse(
 ///
 /// @returns the built function. NULL if the function creation failed.
 JIT_BLOCKS_EXPORT jit_blocks_expr_func_t jit_blocks_expr_build(
-    jit_blocks_expr_func_t* ops, int num_ops, gcc_jit_result** out_res);
+    const jit_blocks_expr_func_t* ops, int num_ops, gcc_jit_result** out_res);
 
 /// @see jit_blocks_expr_build
 JIT_BLOCKS_EXPORT jit_blocks_expr_func_t
-jit_blocks_expr_build_aux(jit_blocks_expr_func_t* ops,
+jit_blocks_expr_build_aux(const jit_blocks_expr_func_t* ops,
                           int num_ops,
                           gcc_jit_context* ctx,
                           gcc_jit_result** out_res);
+
+/// @}
+
+/// @defgroup dynswitch Dynamic Switch Builder
+/// Builds a function acting as a big dynamic switch like below:
+///
+/// Given the below construction call:
+///
+/// @code{.c}
+/// jit_blocks_dynswitch_cond_t conds[] = {
+///    {.val = config_val_0, .func = func_ptr_0},
+///    {.val = config_val_1, .func = func_ptr_1},
+/// };
+/// jit_blocks_dynswitch_result_t result = jit_blocks_dynswitch_build(
+///   conds,
+///   2,
+///   func_ptr_default);
+/// @endcode
+/// It generates the following function:
+/// @code{.c}
+/// void output(void* ctx, long val) {
+///     switch (val) {
+///         case config_val_0:
+///            func_ptr_0(ctx, val);
+///            break;
+///         case config_val_1:
+///            func_ptr_1(ctx, val);
+///            break;
+///         default:
+///            func_ptr_default(ctx, val);
+///            break;
+///     }
+/// }
+/// @endcode
+/// This could be used as an alternative to computed goto if
+/// the condition table is only known at run-time (e.g., build
+/// a dispatch() function of a dynamic base method that supports
+/// a dynamic dispatch table).
+/// Otherwise,
+/// computed goto might be a better choice.
+
+/// @{
+
+/// The function pointer type called in each condition
+typedef void (*jit_blocks_dynswitch_func_ptr_t)(void* ctx, long val);
+
+/// A condition for the dynamic switch
+typedef struct jit_blocks_dynswitch_cond_t {
+  long val;
+  jit_blocks_dynswitch_func_ptr_t func;
+} jit_blocks_dynswitch_cond_t;
+
+/// The output function pointer type
+typedef jit_blocks_dynswitch_func_ptr_t jit_blocks_dynswitch_result_t;
+
+/// Builds a function that performs a dynamic switch.
+/// It matches @a conds array in order and calls the corresponding function.
+/// If no match is found, it calls @a default_func.
+/// @note the @a val in each @a cond must not be duplicated.
+JIT_BLOCKS_EXPORT jit_blocks_dynswitch_result_t
+jit_blocks_dynswitch_build(const jit_blocks_dynswitch_cond_t* conds,
+                           int num_conds,
+                           jit_blocks_dynswitch_func_ptr_t default_func,
+                           gcc_jit_result** out_res);
+
+/// @see jit_blocks_dynswitch_build
+JIT_BLOCKS_EXPORT jit_blocks_dynswitch_result_t
+jit_blocks_dynswitch_build_aux(const jit_blocks_dynswitch_cond_t* conds,
+                               int num_conds,
+                               jit_blocks_dynswitch_func_ptr_t default_func,
+                               gcc_jit_context* ctx,
+                               gcc_jit_result** out_res);
 
 /// @}
 
