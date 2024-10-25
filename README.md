@@ -55,6 +55,12 @@ Builds a stack-based arithmetic expression interpreter.
 
 See @ref expr
 
+## Dynamic Switch builder
+
+Builds a dynamic `switch (val) { case A: ... }` block. Useful when the dispatch table is only known at runtime.
+
+See @ref dynswitch
+
 # Using this library
 
 For CMake users, the recommended way is to add this project either as a git submodule, or download via [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) or [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake), and then add these lines to your CMakeLists.txt:
