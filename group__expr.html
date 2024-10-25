@@ -134,15 +134,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gabeac37b37ddd45f1f0955d324fca1f19" id="r_gabeac37b37ddd45f1f0955d324fca1f19"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__expr.html#gabeac37b37ddd45f1f0955d324fca1f19">jit_blocks_expr_context_pop</a> (<a class="el" href="structjit__blocks__expr__context.html">jit_blocks_expr_context</a> *ctx, double *out_value)</td></tr>
 <tr class="memdesc:gabeac37b37ddd45f1f0955d324fca1f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops a double from the stack.  <br /></td></tr>
 <tr class="separator:gabeac37b37ddd45f1f0955d324fca1f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a3e95115a5da492683f99a892721358" id="r_ga8a3e95115a5da492683f99a892721358"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__expr.html#ga8a3e95115a5da492683f99a892721358">jit_blocks_expr_build</a> (<a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *ops, int num_ops, gcc_jit_result **out_res)</td></tr>
-<tr class="memdesc:ga8a3e95115a5da492683f99a892721358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a function that performs the given arithmetic operations on the <em>initial_ctx</em> stack, and pushes the result back onto the stack.  <br /></td></tr>
-<tr class="separator:ga8a3e95115a5da492683f99a892721358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3296c2f1bd6c73df10262f1d525f2cb1" id="r_ga3296c2f1bd6c73df10262f1d525f2cb1"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__expr.html#ga3296c2f1bd6c73df10262f1d525f2cb1">jit_blocks_expr_build_aux</a> (<a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *ops, int num_ops, gcc_jit_context *ctx, gcc_jit_result **out_res)</td></tr>
-<tr class="separator:ga3296c2f1bd6c73df10262f1d525f2cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef699791687b8ff522cdee0654754a9a" id="r_gaef699791687b8ff522cdee0654754a9a"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__expr.html#gaef699791687b8ff522cdee0654754a9a">jit_blocks_expr_build</a> (const <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *ops, int num_ops, gcc_jit_result **out_res)</td></tr>
+<tr class="memdesc:gaef699791687b8ff522cdee0654754a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a function that performs the given arithmetic operations on the <em>initial_ctx</em> stack, and pushes the result back onto the stack.  <br /></td></tr>
+<tr class="separator:gaef699791687b8ff522cdee0654754a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fa5c0b85d8c9b8b0997ae32f8331f70" id="r_ga0fa5c0b85d8c9b8b0997ae32f8331f70"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__expr.html#ga0fa5c0b85d8c9b8b0997ae32f8331f70">jit_blocks_expr_build_aux</a> (const <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *ops, int num_ops, gcc_jit_context *ctx, gcc_jit_result **out_res)</td></tr>
+<tr class="separator:ga0fa5c0b85d8c9b8b0997ae32f8331f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Creates a stack-based expression evaluation function. </p>
-<p>Users could pass an array of <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> to <a class="el" href="group__expr.html#ga8a3e95115a5da492683f99a892721358">jit_blocks_expr_build</a> to create a function that accepts a <a class="el" href="structjit__blocks__expr__context.html">jit_blocks_expr_context</a> (which is essentially a stack of doubles),</p>
+<p>Users could pass an array of <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> to <a class="el" href="group__expr.html#gaef699791687b8ff522cdee0654754a9a">jit_blocks_expr_build</a> to create a function that accepts a <a class="el" href="structjit__blocks__expr__context.html">jit_blocks_expr_context</a> (which is essentially a stack of doubles),</p>
 <p>Then, users could call <a class="el" href="group__expr.html#ga5d6d0d97345bd44d4809967b068bbea1">jit_blocks_expr_context_new</a> to create a context, push doubles into the context via <a class="el" href="group__expr.html#gaff3b51c422769cbdd9ecce2df4b9a63d">jit_blocks_expr_context_push</a> (Operands evaluated first should be pushed last so that they could popped out during calculation first). After users build a successful <a class="el" href="structjit__blocks__expr__context.html">jit_blocks_expr_context</a>, they can call the generation function and extract result from the stack via <a class="el" href="group__expr.html#gabeac37b37ddd45f1f0955d324fca1f19">jit_blocks_expr_context_pop</a>.</p>
 <p>Example usage:</p>
 <div class="fragment"><div class="line"><span class="comment">// stack_top *= 22.5</span></div>
@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 <div class="line">                                    &amp;<a class="code hl_function" href="group__expr-predefined-ops.html#gab8ed4f64d16b7ca7676c0b8ca4d460e4">jit_blocks_expr_op_negate</a>,</div>
 <div class="line">                                    &amp;custom_op};</div>
 <div class="line">  gcc_jit_result* result = NULL;</div>
-<div class="line">  <a class="code hl_typedef" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> out = <a class="code hl_function" href="group__expr.html#ga8a3e95115a5da492683f99a892721358">jit_blocks_expr_build</a>(funcs, 6, &amp;result);</div>
+<div class="line">  <a class="code hl_typedef" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> out = <a class="code hl_function" href="group__expr.html#gaef699791687b8ff522cdee0654754a9a">jit_blocks_expr_build</a>(funcs, 6, &amp;result);</div>
 <div class="line">  assert(out != NULL);</div>
 <div class="line">  out(ctx);</div>
 <div class="line">  assert(ctx-&gt;<a class="code hl_variable" href="structjit__blocks__expr__context.html#a1fb18b2b2587c1577aa482c71e61df21">stack_size</a> == 1);</div>
@@ -179,8 +179,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__expr-predefined-ops_html_gad4b4b353f320c4e24b23c2c14c482f6a"><div class="ttname"><a href="group__expr-predefined-ops.html#gad4b4b353f320c4e24b23c2c14c482f6a">jit_blocks_expr_op_minus</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT void jit_blocks_expr_op_minus(jit_blocks_expr_context *ctx)</div><div class="ttdoc">Pops two doubles from the stack, subtracts the second from the first, and pushes the result back.</div></div>
 <div class="ttc" id="agroup__expr_html_ga3e0fd51b83db9435a973239c8afd4012"><div class="ttname"><a href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a></div><div class="ttdeci">void(* jit_blocks_expr_func_t)(jit_blocks_expr_context *ctx)</div><div class="ttdoc">Users could pass arbitrary functions to process the expression.</div><div class="ttdef"><b>Definition</b> jit_blocks.h:180</div></div>
 <div class="ttc" id="agroup__expr_html_ga5d6d0d97345bd44d4809967b068bbea1"><div class="ttname"><a href="group__expr.html#ga5d6d0d97345bd44d4809967b068bbea1">jit_blocks_expr_context_new</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT jit_blocks_expr_context * jit_blocks_expr_context_new(int initial_stack_capacity)</div><div class="ttdoc">Creates a new context with the given initial stack capacity.</div></div>
-<div class="ttc" id="agroup__expr_html_ga8a3e95115a5da492683f99a892721358"><div class="ttname"><a href="group__expr.html#ga8a3e95115a5da492683f99a892721358">jit_blocks_expr_build</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT jit_blocks_expr_func_t jit_blocks_expr_build(jit_blocks_expr_func_t *ops, int num_ops, gcc_jit_result **out_res)</div><div class="ttdoc">Creates a function that performs the given arithmetic operations on the initial_ctx stack,...</div></div>
 <div class="ttc" id="agroup__expr_html_gabeac37b37ddd45f1f0955d324fca1f19"><div class="ttname"><a href="group__expr.html#gabeac37b37ddd45f1f0955d324fca1f19">jit_blocks_expr_context_pop</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT bool jit_blocks_expr_context_pop(jit_blocks_expr_context *ctx, double *out_value)</div><div class="ttdoc">Pops a double from the stack.</div></div>
+<div class="ttc" id="agroup__expr_html_gaef699791687b8ff522cdee0654754a9a"><div class="ttname"><a href="group__expr.html#gaef699791687b8ff522cdee0654754a9a">jit_blocks_expr_build</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT jit_blocks_expr_func_t jit_blocks_expr_build(const jit_blocks_expr_func_t *ops, int num_ops, gcc_jit_result **out_res)</div><div class="ttdoc">Creates a function that performs the given arithmetic operations on the initial_ctx stack,...</div></div>
 <div class="ttc" id="agroup__expr_html_gaff3b51c422769cbdd9ecce2df4b9a63d"><div class="ttname"><a href="group__expr.html#gaff3b51c422769cbdd9ecce2df4b9a63d">jit_blocks_expr_context_push</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT bool jit_blocks_expr_context_push(jit_blocks_expr_context *ctx, double value)</div><div class="ttdoc">Pushes a double onto the stack.</div></div>
 <div class="ttc" id="astructjit__blocks__expr__context_html"><div class="ttname"><a href="structjit__blocks__expr__context.html">jit_blocks_expr_context</a></div><div class="ttdoc">Context of calculation.</div><div class="ttdef"><b>Definition</b> jit_blocks.h:155</div></div>
 <div class="ttc" id="astructjit__blocks__expr__context_html_a1fb18b2b2587c1577aa482c71e61df21"><div class="ttname"><a href="structjit__blocks__expr__context.html#a1fb18b2b2587c1577aa482c71e61df21">jit_blocks_expr_context::stack_size</a></div><div class="ttdeci">int stack_size</div><div class="ttdef"><b>Definition</b> jit_blocks.h:157</div></div>
@@ -221,8 +221,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga8a3e95115a5da492683f99a892721358" name="ga8a3e95115a5da492683f99a892721358"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8a3e95115a5da492683f99a892721358">&#9670;&#160;</a></span>jit_blocks_expr_build()</h2>
+<a id="gaef699791687b8ff522cdee0654754a9a" name="gaef699791687b8ff522cdee0654754a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef699791687b8ff522cdee0654754a9a">&#9670;&#160;</a></span>jit_blocks_expr_build()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +230,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">JIT_BLOCKS_EXPORT <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> jit_blocks_expr_build </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *&#160;</td>
           <td class="paramname"><em>ops</em>, </td>
         </tr>
         <tr>
@@ -258,8 +258,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3296c2f1bd6c73df10262f1d525f2cb1" name="ga3296c2f1bd6c73df10262f1d525f2cb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3296c2f1bd6c73df10262f1d525f2cb1">&#9670;&#160;</a></span>jit_blocks_expr_build_aux()</h2>
+<a id="ga0fa5c0b85d8c9b8b0997ae32f8331f70" name="ga0fa5c0b85d8c9b8b0997ae32f8331f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fa5c0b85d8c9b8b0997ae32f8331f70">&#9670;&#160;</a></span>jit_blocks_expr_build_aux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +267,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">JIT_BLOCKS_EXPORT <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> jit_blocks_expr_build_aux </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__expr.html#ga3e0fd51b83db9435a973239c8afd4012">jit_blocks_expr_func_t</a> *&#160;</td>
           <td class="paramname"><em>ops</em>, </td>
         </tr>
         <tr>
@@ -295,7 +295,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__expr.html#ga8a3e95115a5da492683f99a892721358" title="Creates a function that performs the given arithmetic operations on the initial_ctx stack,...">jit_blocks_expr_build</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__expr.html#gaef699791687b8ff522cdee0654754a9a" title="Creates a function that performs the given arithmetic operations on the initial_ctx stack,...">jit_blocks_expr_build</a> </dd></dl>
 
 </div>
 </div>

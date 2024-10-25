@@ -101,10 +101,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga1485f3e5a3c41d55c0f030abee43d6fa" id="r_ga1485f3e5a3c41d55c0f030abee43d6fa"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__funccalls.html#ga42b92f79f3efe9788c8ab13408919f50">jit_blocks_funccalls_output_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__funccalls.html#ga1485f3e5a3c41d55c0f030abee43d6fa">jit_blocks_funccalls_build</a> (<a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *records, int num_records, gcc_jit_result **out_res)</td></tr>
-<tr class="separator:ga1485f3e5a3c41d55c0f030abee43d6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0e5eb72601147b0e25fea5e50a13c98d" id="r_ga0e5eb72601147b0e25fea5e50a13c98d"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__funccalls.html#ga42b92f79f3efe9788c8ab13408919f50">jit_blocks_funccalls_output_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__funccalls.html#ga0e5eb72601147b0e25fea5e50a13c98d">jit_blocks_funccalls_build_aux</a> (<a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *records, int num_records, gcc_jit_context *custom_context, gcc_jit_result **out_res)</td></tr>
-<tr class="separator:ga0e5eb72601147b0e25fea5e50a13c98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78539d67c7df5fda74578634b61a282d" id="r_ga78539d67c7df5fda74578634b61a282d"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__funccalls.html#ga42b92f79f3efe9788c8ab13408919f50">jit_blocks_funccalls_output_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__funccalls.html#ga78539d67c7df5fda74578634b61a282d">jit_blocks_funccalls_build</a> (const <a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *records, int num_records, gcc_jit_result **out_res)</td></tr>
+<tr class="separator:ga78539d67c7df5fda74578634b61a282d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga158999a81758ea86f4e14eb5ce322488" id="r_ga158999a81758ea86f4e14eb5ce322488"><td class="memItemLeft" align="right" valign="top">JIT_BLOCKS_EXPORT <a class="el" href="group__funccalls.html#ga42b92f79f3efe9788c8ab13408919f50">jit_blocks_funccalls_output_func_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__funccalls.html#ga158999a81758ea86f4e14eb5ce322488">jit_blocks_funccalls_build_aux</a> (const <a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *records, int num_records, gcc_jit_context *custom_context, gcc_jit_result **out_res)</td></tr>
+<tr class="separator:ga158999a81758ea86f4e14eb5ce322488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>APIs for building a simple function that calls call specified functions in order. </p>
@@ -113,9 +113,9 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> records[2];</div>
 <div class="line">record[0] = &amp;func1;</div>
 <div class="line">record[1] = &amp;func2;</div>
-<div class="line"><a class="code hl_function" href="group__funccalls.html#ga1485f3e5a3c41d55c0f030abee43d6fa">jit_blocks_funccalls_build</a>(records, 2);</div>
-<div class="ttc" id="agroup__funccalls_html_ga1485f3e5a3c41d55c0f030abee43d6fa"><div class="ttname"><a href="group__funccalls.html#ga1485f3e5a3c41d55c0f030abee43d6fa">jit_blocks_funccalls_build</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(jit_blocks_funccalls_func_ptr_t *records, int num_records, gcc_jit_result **out_res)</div></div>
+<div class="line"><a class="code hl_function" href="group__funccalls.html#ga78539d67c7df5fda74578634b61a282d">jit_blocks_funccalls_build</a>(records, 2);</div>
 <div class="ttc" id="agroup__funccalls_html_ga28b46e6209146e61179f9414a91424b6"><div class="ttname"><a href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a></div><div class="ttdeci">void(* jit_blocks_funccalls_func_ptr_t)(void *)</div><div class="ttdef"><b>Definition</b> jit_blocks.h:84</div></div>
+<div class="ttc" id="agroup__funccalls_html_ga78539d67c7df5fda74578634b61a282d"><div class="ttname"><a href="group__funccalls.html#ga78539d67c7df5fda74578634b61a282d">jit_blocks_funccalls_build</a></div><div class="ttdeci">JIT_BLOCKS_EXPORT jit_blocks_funccalls_output_func_t jit_blocks_funccalls_build(const jit_blocks_funccalls_func_ptr_t *records, int num_records, gcc_jit_result **out_res)</div></div>
 </div><!-- fragment --><p>It will build a function like below: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> output_func(<span class="keywordtype">void</span>* arg) {</div>
 <div class="line">  func1(arg);</div>
 <div class="line">  func2(arg);</div>
@@ -151,8 +151,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga1485f3e5a3c41d55c0f030abee43d6fa" name="ga1485f3e5a3c41d55c0f030abee43d6fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1485f3e5a3c41d55c0f030abee43d6fa">&#9670;&#160;</a></span>jit_blocks_funccalls_build()</h2>
+<a id="ga78539d67c7df5fda74578634b61a282d" name="ga78539d67c7df5fda74578634b61a282d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78539d67c7df5fda74578634b61a282d">&#9670;&#160;</a></span>jit_blocks_funccalls_build()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +160,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">JIT_BLOCKS_EXPORT <a class="el" href="group__funccalls.html#ga42b92f79f3efe9788c8ab13408919f50">jit_blocks_funccalls_output_func_t</a> jit_blocks_funccalls_build </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *&#160;</td>
           <td class="paramname"><em>records</em>, </td>
         </tr>
         <tr>
@@ -185,8 +185,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0e5eb72601147b0e25fea5e50a13c98d" name="ga0e5eb72601147b0e25fea5e50a13c98d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0e5eb72601147b0e25fea5e50a13c98d">&#9670;&#160;</a></span>jit_blocks_funccalls_build_aux()</h2>
+<a id="ga158999a81758ea86f4e14eb5ce322488" name="ga158999a81758ea86f4e14eb5ce322488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga158999a81758ea86f4e14eb5ce322488">&#9670;&#160;</a></span>jit_blocks_funccalls_build_aux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +194,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">JIT_BLOCKS_EXPORT <a class="el" href="group__funccalls.html#ga42b92f79f3efe9788c8ab13408919f50">jit_blocks_funccalls_output_func_t</a> jit_blocks_funccalls_build_aux </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__funccalls.html#ga28b46e6209146e61179f9414a91424b6">jit_blocks_funccalls_func_ptr_t</a> *&#160;</td>
           <td class="paramname"><em>records</em>, </td>
         </tr>
         <tr>
