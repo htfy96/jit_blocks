@@ -1,6 +1,6 @@
 # jit_blocks
 
-JitBlocks is a library built on the top of `libgccjit` that provides common building blocks for JIT-powered code.
+JitBlocks is a C library built on the top of `libgccjit` that provides common building blocks for JIT-powered code.
 
 This overview page is best viewed from [the rendered Doxygen page](https://htfy96.github.io/jit_blocks/).
 
